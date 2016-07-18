@@ -7,6 +7,7 @@ app.get('/', function (req, res) {
 
 app.get('/goodbye', function (req, res) {
   res.send('Goodbye World!');
+  res.send('Goodbye World2!');
 });
 
 app.listen(3000, function () {
