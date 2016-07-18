@@ -1,8 +1,19 @@
-var http = require("http");
+const express = require('express');
+const app = express();  
+const port = 3000;
 
+app.get('/', (request, response) => {  
+  response.send('Hello from Express!!!!');
+})
 
-http.createServer(function(request, response) {
-  response.writeHead(200, {"Content-Type": "text/plain"});
-  response.write("Hello World");
-  response.end();
-}).listen(8888);
+app.get('/goodbye', (request, response) => {  
+  response.send('Goodbye from Express!');
+})
+
+app.listen(port, (err) => {  
+  if (err) {
+    return console.log('something bad happened', err);
+  }
+
+  console.log(`server is listening on ${port}`);
+})
